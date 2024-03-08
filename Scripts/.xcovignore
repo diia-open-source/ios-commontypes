@@ -1,0 +1,34 @@
+
+# No any logic
+- Action.swift
+- Callback.swift
+- ErrorReporter.swift
+- Log.swift
+- ContextMenuResponse.swift
+- ContextMenuProviderProtocol.swift
+- AlertTemplate.swift
+- AttentionMessage.swift
+- GeneralStatusMessage.swift
+- LabelValueModel.swift
+- NavigationPanel.swift
+- OwnerType.swift
+- ParameterizedAttentionMessage.swift
+- ParameterizedStatusMessage.swift
+- SearchModel.swift
+- SuccessResponse.swift
+- TextParameter.swift
+- TickerOptions.swift
+- PublicServiceRatingForm.swift
+- PublicServiceRatingInitialModel.swift
+- PublicServiceRatingRequest.swift
+- RatingFormHolder.swift
+- NamedSearchModel.swift
+- UnemploymentCancelationReasonsResponse.swift
+- FactoryMethods.swift
+- FaqOpenerProtocol.swift
+- FlowCoordinator.swift
+- RateServiceProtocol.swift
+- RouterProtocol.swift
+- URLOpenerProtocol.swift
+- ScreenBrightnessServiceProtocol.swift
+- String+SHA.swift

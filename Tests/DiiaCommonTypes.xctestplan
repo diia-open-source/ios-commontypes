@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "1A856CF8-BF30-4797-8511-73515149D0F9",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:",
+          "identifier" : "DiiaCommonTypes",
+          "name" : "DiiaCommonTypes"
+        }
+      ]
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "DiiaCommonTypesTests",
+        "name" : "DiiaCommonTypesTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "ios-mvpmodule",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/diia-open-source/ios-mvpmodule.git",
+      "state" : {
+        "revision" : "1bb81cb1db77295939ef0e915a27962380d95396",
+        "version" : "1.0.15"
+      }
+    }
+  ],
+  "version" : 2
+}
