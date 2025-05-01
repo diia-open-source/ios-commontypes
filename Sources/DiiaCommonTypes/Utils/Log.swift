@@ -1,3 +1,4 @@
+
 import Foundation
 
 func log(_ items: Any...) {

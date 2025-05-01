@@ -14,32 +14,33 @@ green="\033[42m"
 brown="\033[43m"
 none="\033[0m"
 
-# ------------------- Preparating stage ---------------------------
+
 # Ensure that xcov is installed and available in your machine
 # Check the presence of xcov
 if !command -v xcov &> /dev/null; then
-    echo "xcov not found. Please install it before running this script."
+    echo $bright_red"xcov not found. Please install it before running this script." $none
     exit 1
 fi
 
+# in order to avoid fetching packages, re-building and re-testing: skip removing DERIVED_DATA_PATH folder AND comment out xcodebuild ... -resolvePackageDependencies AND comment out Run tests  lines
 # Clean indicated directories if they exist or create if not
 for directory in "$TEST_RESULTS" "$OUTPUT_FILE"; do
     rm -rf "$directory"
     mkdir -p "$directory"
 done
 
-# ------------------- Performing stage ---------------------------
-# Perform build to download and install all package dependencies
-xcodebuild build -workspace "$PACKAGE_PATH" -scheme "$SCHEME" -derivedDataPath "$DERIVED_DATA_PATH" -resolvePackageDependencies
+# Run your xcodebuild command with the necessary options
+echo Perform task to download and install all package dependencies
+xcodebuild -workspace "$PACKAGE_PATH" -scheme "$SCHEME" -derivedDataPath "$DERIVED_DATA_PATH" -resolvePackageDependencies
 
 # Check the exit status of the build
 BUILD_STATUS=$?
 
 # Run tests to get a coverage report
 if [ $BUILD_STATUS -eq 0 ]; then
-  xcodebuild test -workspace "$PACKAGE_PATH" -scheme "$SCHEME" -destination "$DESTINATION" -derivedDataPath "$DERIVED_DATA_PATH" -quiet # remove -quiet if you need more logs
+  xcodebuild test -workspace "$PACKAGE_PATH" -scheme "$SCHEME" -destination "$DESTINATION" -derivedDataPath "$DERIVED_DATA_PATH" -quiet
 else
-  echo "Build failed. Skipping tests and xcov."
+  echo $bright_red"Build and test failed. Skipping tests and xcov." $none
   exit 1
 fi
 
@@ -48,7 +49,7 @@ TEST_STATUS=$?
 
 # Run xcov if tests passed
 if [ $TEST_STATUS -eq 0 ]; then
-    xcov -w "$PACKAGE_PATH" -o "$OUTPUT_FILE" -s "$SCHEME" --derived_data_path "$DERIVED_DATA_PATH"
+  xcov -w "$PACKAGE_PATH" -o "$OUTPUT_FILE" -s "$SCHEME" --derived_data_path "$DERIVED_DATA_PATH"
 else
   echo $bright_red"Tests failed. Skipping xcov." $none
 fi

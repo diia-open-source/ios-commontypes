@@ -1,3 +1,4 @@
+
 import Foundation
 
 public enum AnyCodable: Codable {
@@ -8,6 +9,19 @@ public enum AnyCodable: Codable {
     case array([AnyCodable])
     case dictionary([String: AnyCodable])
     case null
+    
+    public static func fromEncodable(
+        encodable: Encodable,
+        decoder: JSONDecoder,
+        encoder: JSONEncoder = JSONEncoder()
+    ) -> AnyCodable {
+        do {
+            let data = try encoder.encode(encodable)
+            return try decoder.decode(AnyCodable.self, from: data)
+        } catch {
+            return .null
+        }
+    }
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()

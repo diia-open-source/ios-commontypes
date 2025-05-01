@@ -1,3 +1,4 @@
+
 import Foundation
 
 public struct ContextMenuItem: Codable {
@@ -18,4 +19,6 @@ public enum ContextMenuAction: String, Codable, EnumDecodable {
     case fundDetails
     case rating
     case downloadList
+    case restoreRecords
+    case onboarding
 }
