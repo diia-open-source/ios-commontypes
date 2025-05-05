@@ -13,7 +13,6 @@ public enum ContextMenuAction: String, Codable, EnumDecodable {
     case unknown
     case faqCategory
     case tips
-    case communityContacts
     case supportServiceScreen
     case assistantScreen
     case fundDetails

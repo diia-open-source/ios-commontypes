@@ -151,6 +151,9 @@ public extension AlertTemplateAction {
     static let cancelRepeatedDelivery: AlertTemplateAction = .init("cancelRepeatedDelivery")
     static let refill: AlertTemplateAction = .init("refill")
     static let documents: AlertTemplateAction = .init("documents")
+    static let keepPaidLicensePlate: AlertTemplateAction = .init("keep_paid_license_plate")
+    static let licensePlateChoiceWithoutForce: AlertTemplateAction = .init("license_plate_choice_without_force")
+    static let saveLicensePlateTypeWithoutForce: AlertTemplateAction = .init("save_license_plate_type_without_force")
 }
 
 public struct AlertButtonModel: Codable {

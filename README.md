@@ -11,6 +11,10 @@ Types that needs to be shared amond several packages
 
 ## Getting Started
 
+### Dependencies
+
+* [DiiaMVPModule](https://github.com/diia-open-source/ios-mvpmodule.git): Model-View-Presenter basic protocols
+
 ### Installing
 
 To install DiiaCommonTypes using [Swift Package Manager](https://github.com/apple/swift-package-manager) you can follow the [tutorial published by Apple](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app) using the URL for this repo with the current version:
