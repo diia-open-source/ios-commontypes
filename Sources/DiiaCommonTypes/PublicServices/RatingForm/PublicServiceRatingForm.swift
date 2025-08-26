@@ -22,6 +22,7 @@ public struct PublicServiceRatingList: Codable {
 public struct PublicServiceRatingItem: Codable {
     public let rate: String
     public let emoji: String
+    public let accessibilityDescription: String?
     public let chip: PublicServiceRatingChipList?
     public let chipBlocks: [PublicServiceRatingChipList]?
 }

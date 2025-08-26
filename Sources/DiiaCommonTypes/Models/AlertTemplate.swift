@@ -2,11 +2,12 @@
 import UIKit
 
 public enum AlertType: String, Codable {
-    case largeAlert
-    case middleCenterAlignAlert
-    case middleCenterBlackButtonAlert // Custom type, not returned from backend
-    case middleLeftAlignAlert
-    case smallAlert
+    case largeAlert,
+         middleCenterAlignAlert,
+         middleCenterBlackButtonAlert, // Custom type, not returned from backend
+         middleCenterIconBlackButtonAlert,
+         middleLeftAlignAlert,
+         smallAlert
 }
 
 
@@ -152,8 +153,9 @@ public extension AlertTemplateAction {
     static let refill: AlertTemplateAction = .init("refill")
     static let documents: AlertTemplateAction = .init("documents")
     static let keepPaidLicensePlate: AlertTemplateAction = .init("keep_paid_license_plate")
-    static let licensePlateChoiceWithoutForce: AlertTemplateAction = .init("license_plate_choice_without_force")
-    static let saveLicensePlateTypeWithoutForce: AlertTemplateAction = .init("save_license_plate_type_without_force")
+    static let licensePlateChoiceWithForce: AlertTemplateAction = .init("license_plate_choice_with_force")
+    static let saveLicensePlateTypeWithForce: AlertTemplateAction = .init("save_license_plate_type_with_force")
+    static let paidLicensePlateSelection: AlertTemplateAction = .init("paid_license_plate_selection")
 }
 
 public struct AlertButtonModel: Codable {

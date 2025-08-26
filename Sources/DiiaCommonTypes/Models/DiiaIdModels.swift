@@ -1,7 +1,7 @@
 
 import Foundation
 
-public struct DiiaIdIdentifier: Decodable {
+public struct DiiaIdIdentifier: Codable {
     public let identifier: String
     public let signAlgo: DiiaIdSigningAlgo
     
