@@ -2,7 +2,7 @@
 import Foundation
 @testable import DiiaCommonTypes
 
-class ErrorReporterMock: ErrorReporter {
+final class ErrorReporterMock: ErrorReporter {
     private(set) var isErrorReported = false
     
     func report(error: Error) {

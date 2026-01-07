@@ -2,7 +2,7 @@
 import XCTest
 @testable import DiiaCommonTypes
 
-class ActionTextTests: XCTestCase {
+final class ActionTextTests: XCTestCase {
     
     func test_actionText_initialization() {
         let attributes = [ActionTextAttribute(range: NSRange(location: 0, length: 5), attributes: [:])]

@@ -2,7 +2,7 @@
 import XCTest
 @testable import DiiaCommonTypes
 
-class FailableDecodableTests: XCTestCase {
+final class FailableDecodableTests: XCTestCase {
 
     func test_decoding_success() {
         // Arrange

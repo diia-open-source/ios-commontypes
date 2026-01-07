@@ -2,7 +2,7 @@
 import XCTest
 @testable import DiiaCommonTypes
 
-class DictionaryExtensionTests: XCTestCase {
+final class DictionaryExtensionTests: XCTestCase {
 
     func test_merge() {
         // Arrange

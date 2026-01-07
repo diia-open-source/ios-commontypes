@@ -2,7 +2,7 @@
 import XCTest
 @testable import DiiaCommonTypes
 
-class AnyCodableTests: XCTestCase {
+final class AnyCodableTests: XCTestCase {
     
     func test_encodingAndDecoding_worksCorrect() throws {
         // Bool

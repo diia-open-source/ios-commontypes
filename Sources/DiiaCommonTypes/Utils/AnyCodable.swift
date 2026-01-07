@@ -85,6 +85,29 @@ public enum AnyCodable: Codable {
     }
 }
 
+extension AnyCodable: Equatable {
+    public static func == (lhs: AnyCodable, rhs: AnyCodable) -> Bool {
+        switch (lhs, rhs) {
+        case (.bool(let lhsValue), .bool(let rhsValue)):
+            return lhsValue == rhsValue
+        case (.int(let lhsValue), .int(let rhsValue)):
+            return lhsValue == rhsValue
+        case (.double(let lhsValue), .double(let rhsValue)):
+            return lhsValue == rhsValue
+        case (.string(let lhsValue), .string(let rhsValue)):
+            return lhsValue == rhsValue
+        case (.array(let lhsValue), .array(let rhsValue)):
+            return lhsValue == rhsValue
+        case (.dictionary(let lhsValue), .dictionary(let rhsValue)):
+            return lhsValue == rhsValue
+        case (.null, .null):
+            return false
+        default:
+            return false
+        }
+    }
+}
+
 public enum AnyCodableParser {
     static func parseValue<T: Decodable>(
         forKey key: String? = nil,
