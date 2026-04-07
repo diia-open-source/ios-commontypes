@@ -72,7 +72,7 @@ public enum AnyCodable: Codable {
             let data = try encoder.encode(self)
             return try decoder.decode(T.self, from: data)
         } catch {
-            log(error.localizedDescription)
+            logParsingError(error)
             return nil
         }
     }
@@ -82,6 +82,25 @@ public enum AnyCodable: Codable {
               let value = dict[key]
         else { return nil }
         return value.parse(decoder: decoder)
+    }
+
+    private func logParsingError(_ error: Error) {
+        if let error = error as? DecodingError {
+            switch error {
+            case let .dataCorrupted(context):
+                log("🔴 Parsing error: \(context)")
+            case let .keyNotFound(key, context):
+                log("🔴 Parsing error: Key '\(key)' not found: \(context.debugDescription) CodingPath: \(context.codingPath)")
+            case let .valueNotFound(value, context):
+                log("🔴 Parsing error: Value '\(value)' not found: \(context.debugDescription) CodingPath: \(context.codingPath)")
+            case let .typeMismatch(type, context):
+                log("🔴 Parsing error: Type '\(type)' mismatch: \(context.debugDescription) CodingPath: \(context.codingPath)")
+            @unknown default:
+                log("🔴 Parsing error: \(error)")
+            }
+        } else {
+            log("🔴 Parsing error: \(error)")
+        }
     }
 }
 
