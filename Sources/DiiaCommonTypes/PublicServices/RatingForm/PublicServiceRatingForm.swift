@@ -2,7 +2,8 @@
 import Foundation
 
 public struct PublicServiceRatingFormResponse: Codable {
-    public let ratingForm: PublicServiceRatingForm
+    public let ratingForm: PublicServiceRatingForm?
+    public let template: AlertTemplate?
 }
 
 public struct PublicServiceRatingForm: Codable {

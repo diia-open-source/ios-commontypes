@@ -191,9 +191,9 @@ public struct AlertButtonModel: Codable {
 
 public struct AlertTemplateResponse: Decodable {
     public let template: AlertTemplate
-    public let processCode: Int
+    public let processCode: Int?
     
-    public init(template: AlertTemplate, processCode: Int) {
+    public init(template: AlertTemplate, processCode: Int?) {
         self.template = template
         self.processCode = processCode
     }
