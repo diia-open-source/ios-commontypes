@@ -15,6 +15,7 @@ public enum TextParameterType: String, Codable {
     case link
     case phone
     case email
+    case action
 }
 
 public struct TextParameterData: Codable {

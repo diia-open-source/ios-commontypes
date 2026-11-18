@@ -220,13 +220,15 @@ public struct AlertTemplate: Codable {
 
 public struct AlertTemplateData: Codable {
     public let icon: String?
+    public let imageCode: String?
     public let title: String
     public let description: String?
     public let mainButton: AlertButtonModel
     public let alternativeButton: AlertButtonModel?
     
-    public init(icon: String?, title: String, description: String?, mainButton: AlertButtonModel, alternativeButton: AlertButtonModel?) {
+    public init(icon: String?, imageCode: String? = nil, title: String, description: String?, mainButton: AlertButtonModel, alternativeButton: AlertButtonModel?) {
         self.icon = icon
+        self.imageCode = imageCode
         self.title = title
         self.description = description
         self.mainButton = mainButton

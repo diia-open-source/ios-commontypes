@@ -39,6 +39,8 @@ public extension AddressType {
     static let postOffice = AddressType("post-office")
     static let vehicleReRegistration = AddressType("vehicle-re-registration")
     static let international = AddressType("international-delivery")
+    static let npPostOffice = AddressType("np-post-office")
+    static let npCourier = AddressType("np-courier")
         
     static let privateHouse = AddressType("private-house")
     static let apartment = AddressType("apartment")

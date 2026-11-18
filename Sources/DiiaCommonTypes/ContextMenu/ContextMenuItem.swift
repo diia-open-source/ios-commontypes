@@ -5,6 +5,12 @@ public struct ContextMenuItem: Codable {
     public let type: ContextMenuAction
     public let name: String
     public let code: String?
+    
+    public init(type: ContextMenuAction, name: String, code: String?) {
+        self.type = type
+        self.name = name
+        self.code = code
+    }
 }
 
 public enum ContextMenuAction: String, Codable, EnumDecodable {

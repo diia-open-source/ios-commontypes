@@ -15,7 +15,10 @@ public enum DiiaIdSigningAlgo: String, Codable, EnumDecodable, CaseIterable {
     public static var defaultValue: DiiaIdSigningAlgo = .DSTU
     
     case DSTU
+    case DSTU4145_DSTU7564
     case ECDSA
+    
+    public static var allCases: [DiiaIdSigningAlgo] = [.DSTU4145_DSTU7564, .ECDSA]
 }
 
 public struct HashedFile: Codable {
